@@ -1,30 +1,33 @@
 // from data.js
 var tableData = data;
+var date = d3.select("#datesearch")
+var filterButton = d3.select("#filterscreen")
 
 // YOUR CODE HERE!
-function generateTableHead(table,data1) { 
-	var thead = table.createTHead(); 
-	var row = thead.insertRow()
-	for (let key of data1){ 
-		let th=document.createElement("th"); 
-		let text = document.createTextNode(key); 
-		th.appendChild(text); 
-		row.appendChild(th);
-	}
-}	
+//Function to generate the rows of the table
+function generateTable(data){ 
+	var tbody = d3.select("tbody");
+	$("#tablebody tr").remove();
+	data.forEach(function(ufoData){
 
-function generateTable(table, data){ 
-	for(let element of data){ 
-		let row = table.insertRow();
-		for (key in element){ 
-			let cell = row.insertCell();
-			let text = document.createTextNode(element[key]);
-			cell.appendChild(text)
-		}
-	}
-}
+		var row = tbody.append("tr"); 
+		Object.entries(ufoData).forEach(function([key,value]){
+			var cell = row.append("td"); 
+			cell.text(value);
+		});
+	});
+};
+	
 
-let table = document.querySelector("table"); 
-let data1 = Object.keys(tableData[0]);
-generateTableHead(table,data1)
-generateTable(table,tableData)
+generateTable(tableData);
+date.on("change", function(){
+	var filterDate = d3.event.target.value;
+	var filterResults = data.filter(date => date.datetime === filterDate);
+
+	generateTable(filterResults);
+});
+
+filterButton.on("click", function(){
+	console.log("Button Clicked")
+	document.getElementById("overlay").style.display = "block"
+} )
