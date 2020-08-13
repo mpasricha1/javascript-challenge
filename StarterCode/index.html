@@ -25,33 +25,51 @@
 		 	</div>
 		</div>
  	</nav>
- 	<div class="container" id="main">
-	 	<div class="row">
-	 		<div class="col-md-12">
-		 		<div class="form-group">
-		 			<label for="datasearch">Enter Search Date</label>
-		 			<input type="text" class="form-control" id="datesearch" placeholder="D/M/YYYY">
-		 		</div>
+ 	<div class="container">
+ 		<form>
+	 		<div class="form-row">
+	 				<div class="col-md-2">
+				 		<input type="text" class="form-control" id="datesearch" placeholder="D/M/YYYY">
+				 	</div>
+				 	<div class="col-md-2">
+				 		<input type="text" class="form-control" id="citysearch" placeholder="City">
+				 	</div>
+				 	<div class="col-md-2">
+				 		<input type="text" class="form-control" id="statesearch" placeholder="State">
+				 	</div>
+				 	<div class="col-md-2">
+				 		<input type="text" class="form-control" id="countrysearch" placeholder="Country">
+				 	</div>
+				 	<div class="col-md-2">
+				 		<input type="text" class="form-control" id="shapesearch" placeholder="Shape">
+				 	</div>
+				 	<div class="col-md-2">
+				 		<button type="button" class="btn btn-primary" id="clearfilters">Clear Results</button>
+				 	</div>
+	 			</div>
+	 		</div>
+ 		</form>
+ 	</div>>
+ 		<div class="container-fluid">
+	 		<div class="row">
+				<div class="col-md-12">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th class="table-head">Date</th>
+			                  	<th class="table-head">City</th>
+			                  	<th class="table-head">State</th>
+			                  	<th class="table-head">Country</th>
+			                  	<th class="table-head">Shape</th>
+			                  	<th class="table-head">Duration</th>
+			                  	<th class="table-head">Comments</th>
+							</tr>
+						</thead>
+						<tbody id="tablebody"></tbody>
+			 		</table>
+			 	</div>
 			</div>
 		</div>
-		<div class="row">
-		 	<div class="col-md-12">
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th class="table-head">Date</th>
-                  			<th class="table-head">City</th>
-                  			<th class="table-head">State</th>
-                  			<th class="table-head">Country</th>
-                  			<th class="table-head">Shape</th>
-                  			<th class="table-head">Duration</th>
-                  			<th class="table-head">Comments</th>
-						</tr>
-					</thead>
-					<tbody id="tablebody"></tbody>
- 				</table>
- 			</div>
-		 </div>
 	</div>
 
 
