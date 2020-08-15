@@ -21,7 +21,7 @@ function generateTable(data){
 date.on("change", function(){
 	var filterData = d3.event.target.value;
 	
-	generateTable(data.filter(row => row.datetime === filterData.trim()));
+	generateTable(tableData.filter(row => row.datetime === filterData.trim()));
 	d3.select("#datesearch").node().value = "";
 });
 
